@@ -16,6 +16,10 @@
 		<sonar.organization>sandy660</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>		
 	</properties>
+	
+	<sonar.coverage.jacoco.xmlReportPaths>
+	      ${project.basedir}/coverage-report-aggregator/target/site/jacoco-aggregate/jacoco.xml
+	</sonar.coverage.jacoco.xmlReportPaths>
 
 	<dependencies>
 		<dependency>
