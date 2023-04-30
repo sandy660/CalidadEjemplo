@@ -18,7 +18,6 @@
 		<jacoco.version>0.8.8</jacoco.version>
 		<sonar.coverage.jacoco.xmlReportPaths>${basedir}/target/jacoco_report/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 	    	<jacoco.path>${basedir}/target/jacoco_report</jacoco.path>
-
 		</properties>
 	
 	<dependencies>
