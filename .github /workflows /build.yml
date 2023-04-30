@@ -30,18 +30,7 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-       - name: Format, Build and Generate Javadocs
-        run: mvn -B clean formatter:validate install javadoc:aggregate
-      - name: Analyze with SonarCloud
-        run: >
-          mvn sonar:sonar
-          -Dsonar.coverage.jacoco.xmlReportPaths=jacoco-report-aggregate/target/site/jacoco-aggregate/jacoco.xml
-          -Dsonar.host.url=https://sonarcloud.io
-          -Dsonar.login=$SONAR_TOKEN
-          -Dsonar.organization=sandy660
-          -Dsonar.projectKey=sandy660_CalidadEjemplo
-          -Dsonar.verbose=true
-        
+      - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
